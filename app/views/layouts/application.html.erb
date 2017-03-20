@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <title>TED's Homework Loader!</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 </head>
+
+<nav>
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">TeddyLoader</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Add Hw Source</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">TeddyLoader</h5>
+        <p class="grey-text text-lighten-4">The Ultimate Homework Loader.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2017 Teddy Jinsong Hwang
+      <a class="grey-text text-lighten-4 right" href="https://www.facebook.com/hwangjinsong">Facebook</a>
+    </div>
+  </div>
+</footer>
 </html>
