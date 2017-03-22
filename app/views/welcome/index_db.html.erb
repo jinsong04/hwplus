@@ -1,0 +1,5 @@
+<div class="row">
+  <% @homeworks.each do |homework| %>
+    <%= render partial: "homework_db", locals: { homework: homework } %>
+  <% end %>
+</div>

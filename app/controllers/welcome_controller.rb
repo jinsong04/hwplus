@@ -34,4 +34,9 @@ class WelcomeController < ApplicationController
       }
     ]
   end
+  
+  def index_db
+    @homeworks = Homework.all
+  end
+
 end
