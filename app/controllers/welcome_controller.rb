@@ -38,5 +38,15 @@ class WelcomeController < ApplicationController
   def index_db
     @homeworks = Homework.all
   end
+  
+  def create_homework
+    Homework.create(
+      subject: params[:subject],
+      teacher: params[:teacher],
+      content: params[:content],
+    )
+    
+    redirect_to :back
+  end
 
 end

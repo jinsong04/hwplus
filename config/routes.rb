@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'welcome/index_array'
   get 'welcome/index_hash'
   get 'welcome/index_db'
+  get 'welcome/create_homework'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
