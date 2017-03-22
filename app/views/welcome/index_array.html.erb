@@ -1,0 +1,6 @@
+<div class="row">
+  <%#= @homeworks.length %>
+  <% (0...@homeworks.length).each do |index| %>
+      <%= render partial: "homework_array", locals: { subject: @homeworks[index], teacher: @teachers[index], content: @hwcontent[index] } %>
+  <%end%>
+</div>

@@ -1,11 +1,11 @@
 class WelcomeController < ApplicationController
-  def index
+  def index_array
     @homeworks = ["Science", "ESL SKILLS", "ESL History", "Math", "ESL Literature"]
     @teachers = ["Mrs. Mandl", "Ms. Dufresne", "Mr. Budd", "Mr. Perreault", "Ms. Keech"]
     @hwcontent = ["Finish P. 283 and answer lab sheet", "Review your speeches and say out loud with the dorm parent.", "Read 3.1 and answer questions", "Finish 6-3 Form G", "Read the rest of Chapter 6."]
   end
 
-  def index2
+  def index_hash
     @homeworks = [
       {
         "subject" => "Science",
