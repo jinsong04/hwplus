@@ -1,20 +1,32 @@
-<div class="row">
-  <div class="col s12">
-    <div class="card blue-grey lighten-2">
-      <div class="card-content white-text">
-        <span class="card-title">New Homework</span>
-        <form action="/welcome/create_homework">
-          <input type="text" name="subject" placeholder="Subject">
-          <input type="text" name="teacher" placeholder="Teacher Name">
-          <input type="text" name="content" placeholder="Homework Content">
-          <input class="btn waves-effect waves-light" type="submit">
-        </form>
+<div>
+  <div id="new-hw" class="row" style="display:none">
+    <div class="col s12">
+      <div class="card blue-grey lighten-2">
+        <div class="card-content white-text">
+          <span class="card-title">New Homework</span>
+          <form action="/welcome/create_homework">
+            <input type="text" name="subject" placeholder="Subject" required>
+            <input type="text" name="teacher" placeholder="Teacher Name" required>
+            <input type="text" name="content" placeholder="Homework Content" required>
+            <input type="text" name="url" placeholder="Link for Read More button">
+            <input class="btn waves-effect waves-light" type="submit">
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <% @homeworks.each do |homework| %>
-    <%= render partial: "homework_db", locals: { homework: homework } %>
+  <% if @homeworks.nil? or @homeworks.empty? %>
+    <img class="moveimage" src="http://teddyh.io/cdn/surrender.png" style= width:100% />
+  <% else %>
+    <div class="row">
+      <% @homeworks.each do |homework| %>
+        <%= render partial: "homework_db", locals: { homework: homework } %>
+      <% end %>
+    </div>
   <% end %>
+  <div class="fixed-action-btn horizontal">
+    <a id="new-hw-btn" class="btn-floating btn-large">
+      <i class="large material-icons">add</i>
+    </a>
+  </div>
 </div>

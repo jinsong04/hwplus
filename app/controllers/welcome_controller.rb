@@ -44,9 +44,21 @@ class WelcomeController < ApplicationController
       subject: params[:subject],
       teacher: params[:teacher],
       content: params[:content],
+      url: params[:url],
     )
     
     redirect_to :back
   end
 
+  def delete_homework
+    Homework.find(params[:id]).destroy
+    
+    redirect_to :back
+  end
+  
+  def delete_all
+    Homework.all.destroy
+    
+    redirect_to :back
+  end
 end

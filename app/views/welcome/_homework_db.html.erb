@@ -5,8 +5,12 @@
       <p><%= homework.content %></p>
     </div>
     <div class="card-action">
+      <% if homework.url.nil? or homework.url.empty? %>
       <a href="#">Read More</a>
-      <a href="#">Done</a>
+      <% else %>
+      <a href="<%= homework.url %>">Read More</a>
+      <% end %>
+      <a href="/welcome/delete_homework/<%= homework.id %>">Done</a>
     </div>
   </div>
 </div>

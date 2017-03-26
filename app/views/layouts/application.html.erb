@@ -13,22 +13,30 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 </head>
-
+<style>
+  .moveimage
+{
+    position: relative;
+    top: 5px;
+}
+</style>
 <nav>
   <div class="container">
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">TeddyLoader</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">Add Hw Source</a></li>
+        <li><a href="http://teddyh.io">Developer Homepage</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <body>
-  <div class="container">
-    <%= yield %>
-  </div>
+  <main>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </main>
 </body>
 
 <footer class="page-footer">
