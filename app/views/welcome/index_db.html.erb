@@ -5,10 +5,51 @@
         <div class="card-content white-text">
           <span class="card-title">New Homework</span>
           <form action="/welcome/create_homework">
-            <input type="text" name="subject" placeholder="Subject" required>
-            <input type="text" name="teacher" placeholder="Teacher Name" required>
+              <div class="container">  
+                <div class="row">
+                  <div class="input-field s6">      
+                    <select class="browser-default waves-effect waves-light btn grey lighten-4 black-text text-darken-2" name="subject">
+                        <option value="" disabled="" selected="" class="black">Choose Subject</option>
+                        <option value="Science">Mandl</option>
+                        <option value="ESL SKILLS">Dufresne</option>
+                        <option value="ESL HISTORY">Budd</option>
+                        <option value="Alg 1 Part 1">Perreault</option>
+                        <option value="ESL LIT">Keech</option>
+                        <option value="Other">Other</option>
+                     </select>
+                  </div>
+                </div>
+              </div>
+              <div class="container">  
+                <div class="row">
+                  <div class="input-field s6">      
+                    <select class="browser-default waves-effect waves-light btn grey lighten-4 black-text text-darken-2" name="teacher">
+                        <option value="" disabled="" selected="" class="black">Choose Teacher</option>
+                        <option value="Mrs. Mandl">Mandl</option>
+                        <option value="Ms. Dufresne">Dufresne</option>
+                        <option value="Mr. Budd">Budd</option>
+                        <option value="Mr. Perreault">Perreault</option>
+                        <option value="Ms. Keech">Keech</option>
+                        <option value="Other">Other</option>
+                     </select>
+                  </div>
+                </div>
+              </div>
+              <div class="container">  
+                <div class="row">
+                  <div class="input-field s6">      
+                    <select class="browser-default waves-effect waves-light btn grey lighten-4 black-text text-darken-2" name="url">
+                        <option value="" disabled="" selected="">Choose URL</option>
+                        <option value="http://www.rumseyhall.org/homework#fsEl_2521">Mandl</option>
+                        <option value="https://sites.google.com/site/rumseyeslskillsc/">Dufresne</option>
+                        <option value="https://sites.google.com/site/eslhistorycrhs/">Budd</option>
+                        <option value="https://www.pearsonsuccessnet.com/snpapp/login/PsnLandingPage.jsp?showLandingPage=trues">Perreault</option>
+                        <option value="https://sites.google.com/site/rumseyesllitc/">Keech</option>
+                     </select>
+                  </div>
+                </div>
+              </div>
             <input type="text" name="content" placeholder="Homework Content" required>
-            <input type="text" name="url" placeholder="Link for Read More button">
             <input class="btn waves-effect waves-light" type="submit">
           </form>
         </div>
@@ -17,6 +58,21 @@
   </div>
   <% if @homeworks.nil? or @homeworks.empty? %>
     <img class="moveimage" src="http://teddyh.io/cdn/surrender.png" style= width:100% />
+   <center> <br>
+        <!-- Dropdown Trigger -->
+  <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Teacher Website</a>
+
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">Teacher Websites</a></li>
+    <li class="divider"></li>
+    <li><a href="http://www.rumseyhall.org/homework#fsEl_2521" target="_blank">Science</a></li>
+    <li><a href="https://sites.google.com/site/rumseyeslskillsc/" target="_blank">ESL Skills</a></li>
+    <li><a href="https://sites.google.com/site/eslhistorycrhs/" target="_blank">ESL History</a></li>
+    <li><a href="https://sites.google.com/site/rumseyesllitc" target="_blank">ESL Literature</a></li>
+    <li><a href="http://www.rumseyhall.org/homework#fsEl_2526" target="_blank">Algebra 1 Part 1</a></li>
+  </ul>
+  </center><br>
   <% else %>
     <div class="row">
       <% @homeworks.each do |homework| %>
@@ -28,5 +84,15 @@
     <a id="new-hw-btn" class="btn-floating btn-large">
       <i class="large material-icons">add</i>
     </a>
+    <ul>
   </div>
 </div>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+
+    </script>

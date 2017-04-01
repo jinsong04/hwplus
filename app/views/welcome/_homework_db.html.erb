@@ -8,7 +8,7 @@
       <% if homework.url.nil? or homework.url.empty? %>
       <a href="#">Read More</a>
       <% else %>
-      <a href="<%= homework.url %>">Read More</a>
+      <a href="<%= homework.url %>" target="_blank">Read More</a>
       <% end %>
       <a href="/welcome/delete_homework/<%= homework.id %>">Done</a>
     </div>
