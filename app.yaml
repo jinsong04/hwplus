@@ -14,5 +14,5 @@
 # [START runtime]
 runtime: ruby
 env: flex
-entrypoint: rails server --port=8080
+entrypoint: RUBYOPT="-W0" rails server --port=8080
 # [END runtime]
